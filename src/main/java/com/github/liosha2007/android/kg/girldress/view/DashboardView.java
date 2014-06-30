@@ -32,7 +32,8 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         put(ComponentType.DRESS,
                 Arrays.asList(
                         new ComponentPair(R.drawable.im_platye_1_min, R.drawable.im_platye_1),
-                        new ComponentPair(R.drawable.im_platye_2_min, R.drawable.im_platye_2)
+                        new ComponentPair(R.drawable.im_platye_2_min, R.drawable.im_platye_2),
+                        new ComponentPair(R.drawable.im_platye_3_min, R.drawable.im_platye_3)
                 )
         );
         put(ComponentType.HEIR,
