@@ -3,4 +3,9 @@
     <style name="AppTheme" parent="android:Theme.NoTitleBar.Fullscreen">
     </style>
 
+    <style name="AppTheme.Component">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
 </resources>

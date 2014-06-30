@@ -15,7 +15,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scaleType="fitCenter"
-            android:src="@android:drawable/ic_dialog_email" />
+            android:id="@+id/girl_image"
+            android:src="@drawable/im_girl" />
     </LinearLayout>
 
     <LinearLayout
@@ -31,25 +32,27 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="fill_parent">
+                android:layout_height="fill_parent"
+                android:id="@+id/elems_from_group"
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="fill_parent"
-                    android:drawable="@android:color/tertiary_text_dark"
-                    android:src="@android:drawable/sym_call_outgoing" />
+                <!--<ImageView-->
+                    <!--android:layout_width="120dp"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:drawable="@android:color/tertiary_text_dark"-->
+                    <!--android:src="@android:drawable/sym_call_outgoing" />-->
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="fill_parent"
-                    android:drawable="@android:color/secondary_text_light"
-                    android:src="@android:drawable/sym_call_outgoing" />
+                <!--<ImageView-->
+                    <!--android:layout_width="120dp"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:drawable="@android:color/secondary_text_light"-->
+                    <!--android:src="@android:drawable/sym_call_outgoing" />-->
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="fill_parent"
-                    android:drawable="@android:color/secondary_text_dark"
-                    android:src="@android:drawable/sym_call_outgoing" />
+                <!--<ImageView-->
+                    <!--android:layout_width="120dp"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:drawable="@android:color/secondary_text_dark"-->
+                    <!--android:src="@android:drawable/sym_call_outgoing" />-->
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -64,19 +67,22 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="#aaaa00"
-                    android:src="@android:drawable/screen_background_dark_transparent" />
+                    android:src="@drawable/im_min_dress"
+                    android:id="@+id/group_dress"/>
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="#00aa00"
-                    android:src="@android:drawable/screen_background_dark_transparent" />
+                    android:src="@drawable/im_min_heir"
+                    android:id="@+id/group_heir"/>
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="#aaaa00"
-                    android:src="@android:drawable/screen_background_dark_transparent" />
+                    android:src="@drawable/im_min_shoes"
+                    android:id="@+id/group_shoes"/>
             </TableRow>
 
             <TableRow>
