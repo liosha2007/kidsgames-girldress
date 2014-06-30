@@ -31,20 +31,20 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     protected Map<ComponentType, List<ComponentPair>> group2components = new TreeMap<ComponentType, List<ComponentPair>>(){{
         put(ComponentType.DRESS,
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_platye_1, 0),
-                        new ComponentPair(R.drawable.im_platye_2, 0)
+                        new ComponentPair(R.drawable.im_platye_1_min, R.drawable.im_platye_1),
+                        new ComponentPair(R.drawable.im_platye_2_min, R.drawable.im_platye_2)
                 )
         );
         put(ComponentType.HEIR,
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_volosy_1, 0),
-                        new ComponentPair(R.drawable.im_volosy_2, 0)
+                        new ComponentPair(R.drawable.im_volosy_1_min, R.drawable.im_volosy_1),
+                        new ComponentPair(R.drawable.im_volosy_2_min, R.drawable.im_volosy_2)
                 )
         );
         put(ComponentType.SHOES,
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_tufli_1, 0),
-                        new ComponentPair(R.drawable.im_tufli_2, 0)
+                        new ComponentPair(R.drawable.im_tufli_1_min, R.drawable.im_tufli_1),
+                        new ComponentPair(R.drawable.im_tufli_2_min, R.drawable.im_tufli_2)
                 )
         );
     }};
@@ -117,7 +117,7 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     }
 
     private View createEmptyComponent(ComponentType componentType) {
-        ImageView emptyImageView = createComponent(new ComponentPair(R.drawable.ic_launcher, R.drawable.ic_launcher), componentType);
+        ImageView emptyImageView = createComponent(new ComponentPair(R.drawable.im_empty, R.drawable.im_empty), componentType);
         emptyImageView.setTag(componentType);
         emptyImageView.setOnClickListener(new View.OnClickListener() {
             @Override
