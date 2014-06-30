@@ -3,30 +3,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/im_background"
     android:gravity="center"
     android:orientation="vertical">
 
-    <Button
+    <ImageButton
         android:id="@+id/bu_play"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Играть"
-        android:textSize="20sp" />
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/im_button_play"
+        android:paddingBottom="0sp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bu_about"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="О игре"
-        android:textSize="20sp" />
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/im_button_about" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bu_exit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Выход"
-        android:textSize="20sp" />
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/im_button_exit" />
+
 </LinearLayout>
