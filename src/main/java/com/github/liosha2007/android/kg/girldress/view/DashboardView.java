@@ -3,9 +3,8 @@ package com.github.liosha2007.android.kg.girldress.view;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,9 +15,7 @@ import com.github.liosha2007.android.kg.girldress.common.ComponentPair;
 import com.github.liosha2007.android.kg.girldress.common.ComponentType;
 import com.github.liosha2007.android.kg.girldress.controller.DashboardController;
 import com.github.liosha2007.android.library.activity.view.BaseActivityView;
-import com.github.liosha2007.android.library.common.Utils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +25,10 @@ import java.util.TreeMap;
  * Created by liosha on 29.06.2014.
  */
 public class DashboardView extends BaseActivityView<DashboardController> {
-    protected Map<ComponentType, List<ComponentPair>> group2components = new TreeMap<ComponentType, List<ComponentPair>>(){{
+    protected ComponentType componentType;
+    protected int componentId;
+
+    protected Map<ComponentType, List<ComponentPair>> group2components = new TreeMap<ComponentType, List<ComponentPair>>() {{
         put(ComponentType.DRESS,
                 Arrays.asList(
                         new ComponentPair(R.drawable.im_platye_1_min, R.drawable.im_platye_1),
@@ -58,7 +58,6 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     public void onCreate() {
         super.onCreate();
 
-
         view(R.id.group_dress).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,7 +81,7 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     public void drawState(Map<ComponentType, Integer> componentsToDraw) {
         Bitmap girlBitmap = BitmapFactory.decodeResource(controller.getResources(), R.drawable.im_girl).copy(Bitmap.Config.ARGB_8888, true);
         Canvas canvas = new Canvas(girlBitmap);
-        for (Map.Entry<ComponentType, Integer> entry : componentsToDraw.entrySet()){
+        for (Map.Entry<ComponentType, Integer> entry : componentsToDraw.entrySet()) {
             Bitmap componentBitmap = BitmapFactory.decodeResource(controller.getResources(), entry.getValue());
             canvas.drawBitmap(componentBitmap, 0, 0, null);
         }
@@ -111,7 +110,28 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         component.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                controller.onComponentClicked((ComponentType)view.getTag(), view.getId());
+                controller.onComponentClicked((ComponentType) view.getTag(), view.getId());
+            }
+        });
+        component.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    float x = event.getRawX();
+                    float y = event.getRawY();
+                    ImageView target = DashboardView.this.view(R.id.girl_image);
+                    if (x > target.getX() && y > target.getY() && x < target.getX() + target.getWidth() && y < target.getY() + target.getHeight()) {
+                        controller.onComponentClicked(DashboardView.this.componentType, DashboardView.this.componentId);
+                        return true;
+                    }
+                    return true;
+                } else if (v instanceof ImageView && event.getAction() == MotionEvent.ACTION_DOWN && v.getTag() != null) {
+                    ImageView source = (ImageView) v;
+                    DashboardView.this.componentType = (ComponentType) source.getTag();
+                    DashboardView.this.componentId = source.getId();
+                    return true;
+                }
+                return false;
             }
         });
         return component;
@@ -123,7 +143,7 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         emptyImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                controller.onEmptyComponentClicked((ComponentType)view.getTag());
+                controller.onEmptyComponentClicked((ComponentType) view.getTag());
             }
         });
         return emptyImageView;
