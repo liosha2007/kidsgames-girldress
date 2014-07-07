@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Created by liosha on 29.06.2014.
+ * @author liosha on 29.06.2014.
  */
 public class DashboardView extends BaseActivityView<DashboardController> {
     protected ComponentType componentType;
@@ -33,13 +33,33 @@ public class DashboardView extends BaseActivityView<DashboardController> {
                 Arrays.asList(
                         new ComponentPair(R.drawable.im_platye_1_min, R.drawable.im_platye_1),
                         new ComponentPair(R.drawable.im_platye_2_min, R.drawable.im_platye_2),
-                        new ComponentPair(R.drawable.im_platye_3_min, R.drawable.im_platye_3)
+                        new ComponentPair(R.drawable.im_platye_3_min, R.drawable.im_platye_3),
+                        new ComponentPair(R.drawable.im_platye_4_min, R.drawable.im_platye_4),
+                        new ComponentPair(R.drawable.im_platye_5_min, R.drawable.im_platye_5),
+                        new ComponentPair(R.drawable.im_platye_6_min, R.drawable.im_platye_6),
+                        new ComponentPair(R.drawable.im_platye_7_min, R.drawable.im_platye_7),
+                        new ComponentPair(R.drawable.im_platye_8_min, R.drawable.im_platye_8)
                 )
         );
         put(ComponentType.HEIR,
                 Arrays.asList(
                         new ComponentPair(R.drawable.im_volosy_1_min, R.drawable.im_volosy_1),
-                        new ComponentPair(R.drawable.im_volosy_2_min, R.drawable.im_volosy_2)
+                        new ComponentPair(R.drawable.im_volosy_2_min, R.drawable.im_volosy_2),
+                        new ComponentPair(R.drawable.im_volosy_3_min, R.drawable.im_volosy_3),
+                        new ComponentPair(R.drawable.im_volosy_4_min, R.drawable.im_volosy_4),
+                        new ComponentPair(R.drawable.im_volosy_5_min, R.drawable.im_volosy_5),
+                        new ComponentPair(R.drawable.im_volosy_6_min, R.drawable.im_volosy_6),
+                        new ComponentPair(R.drawable.im_volosy_7_min, R.drawable.im_volosy_7),
+                        new ComponentPair(R.drawable.im_volosy_8_min, R.drawable.im_volosy_8),
+                        new ComponentPair(R.drawable.im_volosy_9_min, R.drawable.im_volosy_9),
+                        new ComponentPair(R.drawable.im_volosy_10_min, R.drawable.im_volosy_10),
+                        new ComponentPair(R.drawable.im_volosy_11_min, R.drawable.im_volosy_11),
+                        new ComponentPair(R.drawable.im_volosy_12_min, R.drawable.im_volosy_12),
+                        new ComponentPair(R.drawable.im_volosy_13_min, R.drawable.im_volosy_13),
+                        new ComponentPair(R.drawable.im_volosy_14_min, R.drawable.im_volosy_14),
+                        new ComponentPair(R.drawable.im_volosy_15_min, R.drawable.im_volosy_15),
+                        new ComponentPair(R.drawable.im_volosy_16_min, R.drawable.im_volosy_16),
+                        new ComponentPair(R.drawable.im_volosy_17_min, R.drawable.im_volosy_17)
                 )
         );
         put(ComponentType.SHOES,
@@ -84,6 +104,7 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         for (Map.Entry<ComponentType, Integer> entry : componentsToDraw.entrySet()) {
             Bitmap componentBitmap = BitmapFactory.decodeResource(controller.getResources(), entry.getValue());
             canvas.drawBitmap(componentBitmap, 0, 0, null);
+            componentBitmap.recycle();
         }
         this.<ImageView>view(R.id.girl_image).setImageDrawable(new BitmapDrawable(controller.getResources(), girlBitmap));
     }
@@ -107,12 +128,6 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         component.setScaleType(ImageView.ScaleType.FIT_CENTER);
         component.setTag(componentType);
         component.setId(componentPair.original);
-        component.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                controller.onComponentClicked((ComponentType) view.getTag(), view.getId());
-            }
-        });
         component.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -122,16 +137,19 @@ public class DashboardView extends BaseActivityView<DashboardController> {
                     ImageView target = DashboardView.this.view(R.id.girl_image);
                     if (x > target.getX() && y > target.getY() && x < target.getX() + target.getWidth() && y < target.getY() + target.getHeight()) {
                         controller.onComponentClicked(DashboardView.this.componentType, DashboardView.this.componentId);
-                        return true;
                     }
-                    return true;
                 } else if (v instanceof ImageView && event.getAction() == MotionEvent.ACTION_DOWN && v.getTag() != null) {
                     ImageView source = (ImageView) v;
                     DashboardView.this.componentType = (ComponentType) source.getTag();
                     DashboardView.this.componentId = source.getId();
-                    return true;
                 }
                 return false;
+            }
+        });
+        component.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                controller.onComponentClicked((ComponentType) view.getTag(), view.getId());
             }
         });
         return component;
