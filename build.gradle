@@ -1,0 +1,93 @@
+println GradleVersion.current()
+assert gradle.gradleVersion == '1.12'
+
+// Потому что более новая версия не поддерживается в android плагине
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+// http://www.gradle.org/docs/current/userguide/java_plugin.html
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+//apply plugin: 'findbugs'
+apply plugin: 'signing'
+
+group = 'com.github.liosha2007.android.kg.girldress'
+version = '1.1.0'
+project.buildDir = 'target'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.android:android:4.1.1.4'
+    compile 'com.github.liosha2007:android-library:1.1.0'
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '19.1'
+    defaultConfig {
+        targetSdkVersion 19
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputFile = file("$project.buildDir.absolutePath/" + variant.outputFile.getName().replace(variant.name, "v$version-$variant.name"))
+    }
+
+    signingConfigs {
+        if (project.hasProperty('release')) {
+            release {
+                storeFile file(project.property('storeFile'))
+                storePassword project.property('storePassword')
+                keyAlias project.property('keyAlias')
+                keyPassword project.property('keyPassword')
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            debuggable false
+            if (project.hasProperty('release')) {
+                println '== Prepare to release =='
+//            runProguard true
+//            proguardFile getDefaultProguardFile('proguard-android.txt')
+//            zipAlign true
+                signingConfig signingConfigs.releasec
+            }
+        }
+    }
+
+	sourceSets {
+		main {
+			manifest.srcFile 'AndroidManifest.xml'
+			java {
+				srcDir 'src/java'
+			}
+			resources {
+				srcDir 'src/resources'
+			}
+            assets {
+                srcDir 'assets'
+            }
+            res {
+                srcDir 'res'
+            }
+		}
+	}
+}
+
