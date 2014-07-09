@@ -65,7 +65,12 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         put(ComponentType.SHOES,
                 Arrays.asList(
                         new ComponentPair(R.drawable.im_tufli_1_min, R.drawable.im_tufli_1),
-                        new ComponentPair(R.drawable.im_tufli_2_min, R.drawable.im_tufli_2)
+                        new ComponentPair(R.drawable.im_tufli_2_min, R.drawable.im_tufli_2),
+                        new ComponentPair(R.drawable.im_tufli_3_min, R.drawable.im_tufli_3),
+                        new ComponentPair(R.drawable.im_tufli_4_min, R.drawable.im_tufli_4),
+                        new ComponentPair(R.drawable.im_tufli_5_min, R.drawable.im_tufli_5),
+                        new ComponentPair(R.drawable.im_tufli_6_min, R.drawable.im_tufli_6),
+                        new ComponentPair(R.drawable.im_tufli_7_min, R.drawable.im_tufli_7)
                 )
         );
     }};
