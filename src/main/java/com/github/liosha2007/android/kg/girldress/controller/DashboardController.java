@@ -1,6 +1,7 @@
 package com.github.liosha2007.android.kg.girldress.controller;
 
 import android.media.MediaPlayer;
+import android.widget.Toast;
 
 import com.github.liosha2007.android.kg.girldress.R;
 import com.github.liosha2007.android.kg.girldress.common.ComponentType;
@@ -37,6 +38,7 @@ public class DashboardController extends BaseActivityController<DashboardView> {
             mPlayer.setLooping(true);
             mPlayer.start();
         }
+        view.showNextBackground();
     }
 
     public void onGroupClicked(ComponentType componentType) {
@@ -89,5 +91,13 @@ public class DashboardController extends BaseActivityController<DashboardView> {
             mPlayer = null;
         }
         super.onDestroy();
+    }
+
+    public void onNextBackgroundClicked() {
+        view.showNextBackground();
+    }
+
+    public void onPrewBackgroundClicked() {
+        view.showPrewBackground();
     }
 }

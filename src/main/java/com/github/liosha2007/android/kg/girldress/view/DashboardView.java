@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -15,7 +16,9 @@ import com.github.liosha2007.android.kg.girldress.common.ComponentPair;
 import com.github.liosha2007.android.kg.girldress.common.ComponentType;
 import com.github.liosha2007.android.kg.girldress.controller.DashboardController;
 import com.github.liosha2007.android.library.activity.view.BaseActivityView;
+import com.github.liosha2007.android.library.common.Utils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +31,10 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     protected ComponentType componentType;
     protected int componentId;
 
+    protected List<Integer> backgrounds = new ArrayList<Integer>(){{
+        add(R.drawable.im_background_01);
+        add(R.drawable.im_background_02);
+    }};
     protected Map<ComponentType, List<ComponentPair>> group2components = new TreeMap<ComponentType, List<ComponentPair>>() {{
         put(ComponentType.DRESS,
                 Arrays.asList(
@@ -101,6 +108,22 @@ public class DashboardView extends BaseActivityView<DashboardController> {
                 controller.onGroupClicked(ComponentType.SHOES);
             }
         });
+        view(R.id.next_background).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v instanceof ImageButton) {
+                    controller.onNextBackgroundClicked();
+                }
+            }
+        });
+        view(R.id.prew_background).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v instanceof ImageButton) {
+                    controller.onPrewBackgroundClicked();
+                }
+            }
+        });
     }
 
     public void drawState(Map<ComponentType, Integer> componentsToDraw) {
@@ -117,13 +140,13 @@ public class DashboardView extends BaseActivityView<DashboardController> {
     public void showGroupComponents(ComponentType componentType) {
         LinearLayout groupLayout = view(R.id.elems_from_group);
         groupLayout.removeAllViews();
-        groupLayout.addView(createEmptyComponent(componentType));
 
         List<ComponentPair> components = group2components.get(componentType);
         for (ComponentPair componentPair : components) {
             ImageView component = createComponent(componentPair, componentType);
             groupLayout.addView(component);
         }
+        groupLayout.addView(createEmptyComponent(componentType));
     }
 
     private ImageView createComponent(ComponentPair componentPair, ComponentType componentType) {
@@ -170,5 +193,29 @@ public class DashboardView extends BaseActivityView<DashboardController> {
             }
         });
         return emptyImageView;
+    }
+
+    public void showNextBackground() {
+        LinearLayout linearLayout = view(R.id.background_image);
+        Object tag = linearLayout.getTag();
+        int nextIndex = 1;
+        if (tag != null){
+            nextIndex = backgrounds.indexOf(Integer.parseInt((String) tag)) + 1;
+            nextIndex = (nextIndex < backgrounds.size() ? nextIndex : 0);
+        }
+        linearLayout.setBackgroundResource(backgrounds.get(nextIndex));
+        linearLayout.setTag(Integer.toString(backgrounds.get(nextIndex)));
+    }
+
+    public void showPrewBackground() {
+        LinearLayout linearLayout = view(R.id.background_image);
+        Object tag = linearLayout.getTag();
+        int nextIndex = 1;
+        if (tag != null){
+            nextIndex = backgrounds.indexOf(Integer.parseInt((String) tag)) - 1;
+            nextIndex = (nextIndex < 0 ? backgrounds.size() - 1 : nextIndex);
+        }
+        linearLayout.setBackgroundResource(backgrounds.get(nextIndex));
+        linearLayout.setTag(Integer.toString(backgrounds.get(nextIndex)));
     }
 }
