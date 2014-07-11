@@ -52,6 +52,14 @@ public class DashboardController extends BaseActivityController<DashboardView> {
 
     public void onComponentClicked(ComponentType componentType, int id) {
         componentsToDraw.put(componentType, id);
+        switch (componentType){
+            case SKIRT:
+                componentsToDraw.remove(ComponentType.DRESS);
+                break;
+            case DRESS:
+                componentsToDraw.remove(ComponentType.SKIRT);
+                break;
+        }
         view.drawState(componentsToDraw);
     }
 

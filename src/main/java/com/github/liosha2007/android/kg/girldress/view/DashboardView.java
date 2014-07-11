@@ -45,7 +45,11 @@ public class DashboardView extends BaseActivityView<DashboardController> {
                         new ComponentPair(R.drawable.im_platye_5_min, R.drawable.im_platye_5),
                         new ComponentPair(R.drawable.im_platye_6_min, R.drawable.im_platye_6),
                         new ComponentPair(R.drawable.im_platye_7_min, R.drawable.im_platye_7),
-                        new ComponentPair(R.drawable.im_platye_8_min, R.drawable.im_platye_8)
+                        new ComponentPair(R.drawable.im_platye_8_min, R.drawable.im_platye_8),
+                        new ComponentPair(R.drawable.im_platye_9_min, R.drawable.im_platye_9),
+                        new ComponentPair(R.drawable.im_platye_10_min, R.drawable.im_platye_10),
+                        new ComponentPair(R.drawable.im_platye_11_min, R.drawable.im_platye_11),
+                        new ComponentPair(R.drawable.im_platye_12_min, R.drawable.im_platye_12)
                 )
         );
         put(ComponentType.HEIR,
@@ -80,6 +84,13 @@ public class DashboardView extends BaseActivityView<DashboardController> {
                         new ComponentPair(R.drawable.im_tufli_7_min, R.drawable.im_tufli_7)
                 )
         );
+        put(ComponentType.SKIRT,
+                Arrays.asList(
+                        new ComponentPair(R.drawable.im_skirt_1_min, R.drawable.im_skirt_1),
+                        new ComponentPair(R.drawable.im_skirt_2_min, R.drawable.im_skirt_2),
+                        new ComponentPair(R.drawable.im_skirt_3_min, R.drawable.im_skirt_3)
+                )
+        );
     }};
 
     public DashboardView() {
@@ -106,6 +117,12 @@ public class DashboardView extends BaseActivityView<DashboardController> {
             @Override
             public void onClick(View view) {
                 controller.onGroupClicked(ComponentType.SHOES);
+            }
+        });
+        view(R.id.group_skirt).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                controller.onGroupClicked(ComponentType.SKIRT);
             }
         });
         view(R.id.next_background).setOnClickListener(new View.OnClickListener() {

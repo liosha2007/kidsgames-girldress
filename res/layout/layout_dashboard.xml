@@ -97,7 +97,8 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@android:drawable/screen_background_dark_transparent" />
+                    android:src="@drawable/im_min_skirt"
+                    android:id="@+id/group_skirt"/>
 
                 <ImageView
                     android:layout_width="50dp"
