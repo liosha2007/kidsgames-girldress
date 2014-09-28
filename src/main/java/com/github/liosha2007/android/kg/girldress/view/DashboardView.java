@@ -94,12 +94,18 @@ public class DashboardView extends BaseActivityView<DashboardController> {
                 Arrays.asList(
                         new ComponentPair(R.drawable.im_bead_min_01, R.drawable.im_bead_01),
                         new ComponentPair(R.drawable.im_bead_min_02, R.drawable.im_bead_02),
-                        new ComponentPair(R.drawable.im_bead_min_03, R.drawable.im_bead_03)
+                        new ComponentPair(R.drawable.im_bead_min_03, R.drawable.im_bead_03),
+                        new ComponentPair(R.drawable.im_bead_min_04, R.drawable.im_bead_04),
+                        new ComponentPair(R.drawable.im_bead_min_05, R.drawable.im_bead_05),
+                        new ComponentPair(R.drawable.im_bead_min_06, R.drawable.im_bead_06)
                 )
         );
         put(ComponentType.EARRING, // Серьги
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_earring_min_01, R.drawable.im_earring_01)
+                        new ComponentPair(R.drawable.im_earring_min_01, R.drawable.im_earring_01),
+                        new ComponentPair(R.drawable.im_earring_min_02, R.drawable.im_earring_02),
+                        new ComponentPair(R.drawable.im_earring_min_03, R.drawable.im_earring_03),
+                        new ComponentPair(R.drawable.im_earring_min_04, R.drawable.im_earring_04)
                         )
         );
     }};
