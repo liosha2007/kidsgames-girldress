@@ -76,19 +76,19 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/im_min_dress"
+                    android:src="@drawable/im_cat_dress"
                     android:id="@+id/group_dress"/>
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/im_min_heir"
+                    android:src="@drawable/im_cat_heir"
                     android:id="@+id/group_heir"/>
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/im_min_shoes"
+                    android:src="@drawable/im_cat_shoes"
                     android:id="@+id/group_shoes"/>
             </TableRow>
 
@@ -97,18 +97,20 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/im_min_skirt"
+                    android:src="@drawable/im_cat_skirt"
                     android:id="@+id/group_skirt"/>
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@android:drawable/screen_background_dark_transparent" />
+                    android:src="@drawable/im_cat_bead"
+                    android:id="@+id/group_bead"/>
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@android:drawable/screen_background_dark_transparent" />
+                    android:src="@drawable/im_cat_earring"
+                    android:id="@+id/group_earring"/>
             </TableRow>
 
             <TableRow>

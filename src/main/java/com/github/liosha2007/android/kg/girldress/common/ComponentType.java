@@ -4,15 +4,15 @@ package com.github.liosha2007.android.kg.girldress.common;
  * @autored by liosha on 30.06.2014.
  */
 public enum ComponentType {
-    BEAD(1), // Бусы
-    DRESS(2), // Платье
+    DRESS(1), // Платье
+    BEAD(2), // Бусы
     SHOES(3), // Туфли
     HOSE(4), // Чулки
     SKIRT(5), // Юбка
-    EARRING(6), // Серьги
-    BONNET(7), // Чепчик
-    BANGLE(8), // Браслет
-    HEIR(9), // Волосы
+    BONNET(6), // Чепчик
+    BANGLE(7), // Браслет
+    HEIR(8), // Волосы
+    EARRING(9), // Серьги
 //    APRON(4), // Фартук
 //    BLOUSE(5), // Кофта
 //    PANTS(6), // Штаны

@@ -1,7 +1,6 @@
 package com.github.liosha2007.android.kg.girldress.controller;
 
 import android.media.MediaPlayer;
-import android.widget.Toast;
 
 import com.github.liosha2007.android.kg.girldress.R;
 import com.github.liosha2007.android.kg.girldress.common.ComponentType;
@@ -18,7 +17,7 @@ public class DashboardController extends BaseActivityController<DashboardView> {
     protected static float PLAYER_VOLUME = 0.08f;
     protected MediaPlayer mPlayer;
     protected Map<ComponentType, Integer> componentsToDraw = new TreeMap<ComponentType, Integer>() {{
-        put(ComponentType.HEIR, R.drawable.im_volosy_1);
+        put(ComponentType.HEIR, R.drawable.im_volosy_01);
     }};
     protected int playerPosition;
 

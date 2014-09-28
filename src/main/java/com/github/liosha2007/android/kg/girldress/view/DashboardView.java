@@ -16,7 +16,6 @@ import com.github.liosha2007.android.kg.girldress.common.ComponentPair;
 import com.github.liosha2007.android.kg.girldress.common.ComponentType;
 import com.github.liosha2007.android.kg.girldress.controller.DashboardController;
 import com.github.liosha2007.android.library.activity.view.BaseActivityView;
-import com.github.liosha2007.android.library.common.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,60 +35,72 @@ public class DashboardView extends BaseActivityView<DashboardController> {
         add(R.drawable.im_background_02);
     }};
     protected Map<ComponentType, List<ComponentPair>> group2components = new TreeMap<ComponentType, List<ComponentPair>>() {{
-        put(ComponentType.DRESS,
+        put(ComponentType.DRESS, // Платье
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_platye_1_min, R.drawable.im_platye_1),
-                        new ComponentPair(R.drawable.im_platye_2_min, R.drawable.im_platye_2),
-                        new ComponentPair(R.drawable.im_platye_3_min, R.drawable.im_platye_3),
-                        new ComponentPair(R.drawable.im_platye_4_min, R.drawable.im_platye_4),
-                        new ComponentPair(R.drawable.im_platye_5_min, R.drawable.im_platye_5),
-                        new ComponentPair(R.drawable.im_platye_6_min, R.drawable.im_platye_6),
-                        new ComponentPair(R.drawable.im_platye_7_min, R.drawable.im_platye_7),
-                        new ComponentPair(R.drawable.im_platye_8_min, R.drawable.im_platye_8),
-                        new ComponentPair(R.drawable.im_platye_9_min, R.drawable.im_platye_9),
-                        new ComponentPair(R.drawable.im_platye_10_min, R.drawable.im_platye_10),
-                        new ComponentPair(R.drawable.im_platye_11_min, R.drawable.im_platye_11),
-                        new ComponentPair(R.drawable.im_platye_12_min, R.drawable.im_platye_12)
+                        new ComponentPair(R.drawable.im_platye_min_01, R.drawable.im_platye_01),
+                        new ComponentPair(R.drawable.im_platye_min_02, R.drawable.im_platye_02),
+                        new ComponentPair(R.drawable.im_platye_min_03, R.drawable.im_platye_03),
+                        new ComponentPair(R.drawable.im_platye_min_04, R.drawable.im_platye_04),
+                        new ComponentPair(R.drawable.im_platye_min_05, R.drawable.im_platye_05),
+                        new ComponentPair(R.drawable.im_platye_min_06, R.drawable.im_platye_06),
+                        new ComponentPair(R.drawable.im_platye_min_07, R.drawable.im_platye_07),
+                        new ComponentPair(R.drawable.im_platye_min_08, R.drawable.im_platye_08),
+                        new ComponentPair(R.drawable.im_platye_min_09, R.drawable.im_platye_09),
+                        new ComponentPair(R.drawable.im_platye_min_10, R.drawable.im_platye_10),
+                        new ComponentPair(R.drawable.im_platye_min_11, R.drawable.im_platye_11),
+                        new ComponentPair(R.drawable.im_platye_min_12, R.drawable.im_platye_12)
                 )
         );
-        put(ComponentType.HEIR,
+        put(ComponentType.HEIR, // Волосы
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_volosy_1_min, R.drawable.im_volosy_1),
-                        new ComponentPair(R.drawable.im_volosy_2_min, R.drawable.im_volosy_2),
-                        new ComponentPair(R.drawable.im_volosy_3_min, R.drawable.im_volosy_3),
-                        new ComponentPair(R.drawable.im_volosy_4_min, R.drawable.im_volosy_4),
-                        new ComponentPair(R.drawable.im_volosy_5_min, R.drawable.im_volosy_5),
-                        new ComponentPair(R.drawable.im_volosy_6_min, R.drawable.im_volosy_6),
-                        new ComponentPair(R.drawable.im_volosy_7_min, R.drawable.im_volosy_7),
-                        new ComponentPair(R.drawable.im_volosy_8_min, R.drawable.im_volosy_8),
-                        new ComponentPair(R.drawable.im_volosy_9_min, R.drawable.im_volosy_9),
-                        new ComponentPair(R.drawable.im_volosy_10_min, R.drawable.im_volosy_10),
-                        new ComponentPair(R.drawable.im_volosy_11_min, R.drawable.im_volosy_11),
-                        new ComponentPair(R.drawable.im_volosy_12_min, R.drawable.im_volosy_12),
-                        new ComponentPair(R.drawable.im_volosy_13_min, R.drawable.im_volosy_13),
-                        new ComponentPair(R.drawable.im_volosy_14_min, R.drawable.im_volosy_14),
-                        new ComponentPair(R.drawable.im_volosy_15_min, R.drawable.im_volosy_15),
-                        new ComponentPair(R.drawable.im_volosy_16_min, R.drawable.im_volosy_16),
-                        new ComponentPair(R.drawable.im_volosy_17_min, R.drawable.im_volosy_17)
+                        new ComponentPair(R.drawable.im_volosy_min_01, R.drawable.im_volosy_01),
+                        new ComponentPair(R.drawable.im_volosy_min_02, R.drawable.im_volosy_02),
+                        new ComponentPair(R.drawable.im_volosy_min_03, R.drawable.im_volosy_03),
+                        new ComponentPair(R.drawable.im_volosy_min_04, R.drawable.im_volosy_04),
+                        new ComponentPair(R.drawable.im_volosy_min_05, R.drawable.im_volosy_05),
+                        new ComponentPair(R.drawable.im_volosy_min_06, R.drawable.im_volosy_06),
+                        new ComponentPair(R.drawable.im_volosy_min_07, R.drawable.im_volosy_07),
+                        new ComponentPair(R.drawable.im_volosy_min_08, R.drawable.im_volosy_08),
+                        new ComponentPair(R.drawable.im_volosy_min_09, R.drawable.im_volosy_09),
+                        new ComponentPair(R.drawable.im_volosy_min_10, R.drawable.im_volosy_10),
+                        new ComponentPair(R.drawable.im_volosy_min_11, R.drawable.im_volosy_11),
+                        new ComponentPair(R.drawable.im_volosy_min_12, R.drawable.im_volosy_12),
+                        new ComponentPair(R.drawable.im_volosy_min_13, R.drawable.im_volosy_13),
+                        new ComponentPair(R.drawable.im_volosy_min_14, R.drawable.im_volosy_14),
+                        new ComponentPair(R.drawable.im_volosy_min_15, R.drawable.im_volosy_15),
+                        new ComponentPair(R.drawable.im_volosy_min_16, R.drawable.im_volosy_16),
+                        new ComponentPair(R.drawable.im_volosy_min_17, R.drawable.im_volosy_17)
                 )
         );
-        put(ComponentType.SHOES,
+        put(ComponentType.SHOES, // Туфли
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_tufli_1_min, R.drawable.im_tufli_1),
-                        new ComponentPair(R.drawable.im_tufli_2_min, R.drawable.im_tufli_2),
-                        new ComponentPair(R.drawable.im_tufli_3_min, R.drawable.im_tufli_3),
-                        new ComponentPair(R.drawable.im_tufli_4_min, R.drawable.im_tufli_4),
-                        new ComponentPair(R.drawable.im_tufli_5_min, R.drawable.im_tufli_5),
-                        new ComponentPair(R.drawable.im_tufli_6_min, R.drawable.im_tufli_6),
-                        new ComponentPair(R.drawable.im_tufli_7_min, R.drawable.im_tufli_7)
+                        new ComponentPair(R.drawable.im_tufli_min_01, R.drawable.im_tufli_01),
+                        new ComponentPair(R.drawable.im_tufli_min_02, R.drawable.im_tufli_02),
+                        new ComponentPair(R.drawable.im_tufli_min_03, R.drawable.im_tufli_03),
+                        new ComponentPair(R.drawable.im_tufli_min_04, R.drawable.im_tufli_04),
+                        new ComponentPair(R.drawable.im_tufli_min_05, R.drawable.im_tufli_05),
+                        new ComponentPair(R.drawable.im_tufli_min_06, R.drawable.im_tufli_06),
+                        new ComponentPair(R.drawable.im_tufli_min_07, R.drawable.im_tufli_07)
                 )
         );
-        put(ComponentType.SKIRT,
+        put(ComponentType.SKIRT, // Юбка
                 Arrays.asList(
-                        new ComponentPair(R.drawable.im_skirt_1_min, R.drawable.im_skirt_1),
-                        new ComponentPair(R.drawable.im_skirt_2_min, R.drawable.im_skirt_2),
-                        new ComponentPair(R.drawable.im_skirt_3_min, R.drawable.im_skirt_3)
+                        new ComponentPair(R.drawable.im_skirt_min_01, R.drawable.im_skirt_01),
+                        new ComponentPair(R.drawable.im_skirt_min_02, R.drawable.im_skirt_02),
+                        new ComponentPair(R.drawable.im_skirt_min_03, R.drawable.im_skirt_03)
                 )
+        );
+        put(ComponentType.BEAD, // Бусы
+                Arrays.asList(
+                        new ComponentPair(R.drawable.im_bead_min_01, R.drawable.im_bead_01),
+                        new ComponentPair(R.drawable.im_bead_min_02, R.drawable.im_bead_02),
+                        new ComponentPair(R.drawable.im_bead_min_03, R.drawable.im_bead_03)
+                )
+        );
+        put(ComponentType.EARRING, // Серьги
+                Arrays.asList(
+                        new ComponentPair(R.drawable.im_earring_min_01, R.drawable.im_earring_01)
+                        )
         );
     }};
 
@@ -123,6 +134,18 @@ public class DashboardView extends BaseActivityView<DashboardController> {
             @Override
             public void onClick(View view) {
                 controller.onGroupClicked(ComponentType.SKIRT);
+            }
+        });
+        view(R.id.group_bead).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                controller.onGroupClicked(ComponentType.BEAD);
+            }
+        });
+        view(R.id.group_earring).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                controller.onGroupClicked(ComponentType.EARRING);
             }
         });
         view(R.id.next_background).setOnClickListener(new View.OnClickListener() {
